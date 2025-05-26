@@ -77,7 +77,6 @@ h1 {
   margin-bottom: 1.2rem;
   border-radius: 16px;
   padding: 22px;
-  box-shadow: 0 0 16px 4px #18284844;
   background: transparent;
 }
 
@@ -86,8 +85,9 @@ h1 {
   height: 88px;
   background:
     url('images/bg.png') center/cover no-repeat;
-  border: none;
+  border: 4px double var(--stone-blue);
   border-radius: 8px;
+  box-shadow: 0 2px 0 #1b2233, 0 0 12px 2px #4062bb55 inset;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -95,7 +95,7 @@ h1 {
   user-select: none;
   overflow: hidden;
   position: relative;
-  transition: background 0.13s;
+  transition: background 0.13s, border-color 0.15s, box-shadow 0.12s;
 }
 
 .cell:hover {
@@ -104,6 +104,8 @@ h1 {
     linear-gradient(225deg, #34599522 4px, transparent 4px),
     #345995cc,
     url('images/bg.png') center/cover no-repeat;
+  border-color: var(--accent-blue);
+  box-shadow: 0 2px 0 #22335a, 0 0 16px 4px #8bbcff99 inset;
 }
 
 .cell img {
@@ -144,6 +146,8 @@ button#restart:hover {
   .cell {
     width: 54px;
     height: 54px;
+    border-width: 2.5px;
+    border-radius: 4px;
   }
   .cell img {
     width: 32px;
