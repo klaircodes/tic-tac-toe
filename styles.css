@@ -71,7 +71,6 @@ body {
     linear-gradient(225deg, #30406022 4px, transparent 4px),
     rgba(43, 69, 112, 0.80), */
     url('images/bg.png') center/cover no-repeat;
-  border: 4px double rgba(255, 255, 255, 0.315);
   border-radius: 8px;
   box-shadow: 0 2px 0 #1b2233, 0 0 12px 2px #4062bb55 inset;
   cursor: pointer;
