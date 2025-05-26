@@ -13,7 +13,6 @@ const winCombos = [
 ];
 
 const boardDiv = document.getElementById('board');
-const statusDiv = document.getElementById('status');
 const xScore = document.getElementById('x-score');
 const oScore = document.getElementById('o-score');
 const drawScore = document.getElementById('draw-score');
@@ -32,17 +31,6 @@ function renderBoard() {
     }
     boardDiv.appendChild(div);
   });
-}
-
-function renderStatus() {
-  if (!gameActive) {
-    const winner = getWinner();
-    if (winner === 'X') statusDiv.textContent = 'Sword Wins!';
-    else if (winner === 'O') statusDiv.textContent = 'Rune Wins!';
-    else statusDiv.textContent = 'Draw!';
-  } else {
-    statusDiv.textContent = (xTurn ? "Sword's" : "Rune's") + " Turn";
-  }
 }
 
 function getWinner() {
@@ -70,7 +58,6 @@ function onCellClick(e) {
   } else {
     xTurn = !xTurn;
   }
-  renderStatus();
 }
 
 function updateScores() {
@@ -84,12 +71,13 @@ function restartGame() {
   xTurn = true;
   gameActive = true;
   renderBoard();
-  renderStatus();
 }
 
 boardDiv.addEventListener('click', onCellClick);
-restartBtn.addEventListener('click', restartGame);
+restartBtn.addEventListener('click', () => {
+  gameActive = true;
+  restartGame();
+});
 
 renderBoard();
-renderStatus();
 updateScores();

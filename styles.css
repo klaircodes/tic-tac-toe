@@ -10,7 +10,9 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+  /* PAGE background */
   background: transparent;
+  background-size: 350px 350px;
 }
 
 body {
@@ -33,40 +35,21 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: url(images/bg2.png) center/cover no-repeat;
   margin: 0;
-  padding: 0;
+  padding: 32px 36px 28px 36px;
   min-width: 0;
   min-height: 0;
-  box-shadow: none;
-  border: none;
-  border-radius: 0;
-}
-
-h1 {
-  font-size: 2.2rem;
-  margin: 0 0 1.2rem 0;
-  color: var(--accent-blue);
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 0 var(--medieval-blue);
+  border-radius: 18px;
 }
 
 .scoreboard {
   display: flex;
   gap: 2.2rem;
   font-size: 1.2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
   color: var(--accent-blue);
   text-shadow: 2px 2px 0 var(--medieval-blue);
-}
-
-.status {
-  margin-bottom: 0.8rem;
-  font-size: 1.2rem;
-  min-height: 30px;
-  color: var(--accent-blue);
-  font-weight: bold;
-  text-shadow: 2px 2px 0 var(--stone-blue);
 }
 
 .board {
@@ -84,8 +67,11 @@ h1 {
   width: 88px;
   height: 88px;
   background:
+    /* linear-gradient(135deg, #30406033 4px, transparent 4px),
+    linear-gradient(225deg, #30406022 4px, transparent 4px),
+    rgba(43, 69, 112, 0.80), */
     url('images/bg.png') center/cover no-repeat;
-  border: 4px double var(--stone-blue);
+  border: 4px double rgba(255, 255, 255, 0.315);
   border-radius: 8px;
   box-shadow: 0 2px 0 #1b2233, 0 0 12px 2px #4062bb55 inset;
   cursor: pointer;
@@ -137,11 +123,16 @@ button#restart:hover {
 }
 
 @media (max-width: 650px) {
+  .main-container {
+    padding: 8px 4px 12px 4px;
+    border-radius: 9px;
+  }
   .board {
     grid-template-columns: repeat(3, 54px);
     grid-template-rows: repeat(3, 54px);
     gap: 5px;
     padding: 8px;
+    border-radius: 6px;
   }
   .cell {
     width: 54px;
@@ -153,11 +144,10 @@ button#restart:hover {
     width: 32px;
     height: 32px;
   }
-  h1 {
-    font-size: 1.1rem;
-  }
-  .scoreboard, .status {
+  .scoreboard {
     font-size: 0.7rem;
+    gap: 1.2rem;
+    margin-bottom: 0.6rem;
   }
   button#restart {
     font-size: 0.8rem;
